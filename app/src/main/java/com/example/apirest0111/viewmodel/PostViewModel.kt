@@ -9,9 +9,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 // ViewModel que mantiene el estado de los datos obtenidos
-class PostViewModel : ViewModel() {
+class PostViewModel(
 
-    private val repository = PostRepository()
+private val repository: PostRepository = PostRepository()
+): ViewModel() {
+
+   // private val repository = PostRepository()
 
     // Flujo mutable que contiene la lista de posts
     private val _postList = MutableStateFlow<List<Post>>(emptyList())
